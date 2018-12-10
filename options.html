@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+</head>
+
+<body>
+    <div class="card container" style="margin-top:50px;">
+        <div class="card-body">
+            <h5 class="card-title" style="margin-bottom:0px;"><img src="images/folder_icon_32.png" /> Script Manager Options</h5>
+            Script Name: <input type="text" class="form-control" id="tbScriptName">
+            Script: <textarea class="form-control" id="taScript" rows="15"></textarea>
+            <br />
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <button id="btnSaveScript" class="btn btn-primary">Save Script</button>
+                        <button id="btnClear" class="btn btn-secondary">Clear</button>
+                        <button id="btnViewScript" class="btn btn-success" disabled>View Script</button>
+                        <button id="btnDeleteScript" class="btn btn-danger" disabled>Delete Script</button>
+                        Scripts: 
+                        <div style="width:500px; display:inline-block;">
+                            <select class="form-control" id="selectScript">
+                                <option value="0">Select a Script</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="options.js"></script>
+
+</html>
