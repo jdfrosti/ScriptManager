@@ -1,3 +1,18 @@
+chrome.storage.sync.get('scriptNames', function(result){
+    if(typeof result.scriptNames != 'undefined'){
+        var names = result.scriptNames.split(";");
+        names.forEach(addSelectScripts)
+    }
+});
+
+function addSelectScripts(item){
+    var select = document.getElementById('selectScript');
+    var option = document.createElement("option");
+    option.text = item;
+    option.value = item;
+    select.appendChild(option);        
+}
+
 var saveScript = document.getElementById("btnSaveScript");
 var viewScript = document.getElementById("btnViewScript");
 var deleteScript = document.getElementById("btnDeleteScript");
