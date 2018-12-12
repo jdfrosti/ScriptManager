@@ -1,6 +1,6 @@
 chrome.storage.sync.get('scriptNames', function(result){
     if(typeof result.scriptNames != 'undefined'){
-        var names = result.scriptNames.split(";");
+        
         var div = document.createElement("div");
         var innerDiv = document.createElement("div");
         innerDiv.classList.add("container");
@@ -21,8 +21,10 @@ chrome.storage.sync.get('scriptNames', function(result){
         div.appendChild(innerDiv);
         document.body.appendChild(div);
         setOptionsButton();
-        names.forEach(addScripts)
-
+        var names = result.scriptNames.split(";");
+        if(names.count>0){
+            names.forEach(addScripts)
+        }       
     }
 });
 

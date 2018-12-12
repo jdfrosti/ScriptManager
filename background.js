@@ -1,8 +1,7 @@
 chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.set({
-    script: 'alert(\'testStart\');'
+    scriptNames: ""
   }, function () {
-    console.log('The current script is: ');
   });
 
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
