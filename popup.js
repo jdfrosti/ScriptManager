@@ -3,18 +3,26 @@ chrome.storage.sync.get('scriptNames', function(result){
         var names = result.scriptNames.split(";");
         var div = document.createElement("div");
         var innerDiv = document.createElement("div");
+        innerDiv.classList.add("container");
         var heading = document.createElement("h6");
+        var optionsButton = document.createElement("img");
+        optionsButton.setAttribute("src", "images/settings.png");
         heading.classList.add("card-title");
-        heading.innerHTML = "Script Manager";
+        innerDiv.classList.add("text-center");
+        heading.innerHTML = "Script Manager ";
+        optionsButton.id = "optionsButton";
+        heading.appendChild(optionsButton);
         innerDiv.appendChild(heading);
         div.classList.add("card");
         div.setAttribute("style", "border:none;")
         innerDiv.classList.add("card-body");
-        innerDiv.setAttribute("style", "padding:15px;");
+        innerDiv.setAttribute("style", "padding:15px;min-width:165px;");
         innerDiv.id="btnHolder";
         div.appendChild(innerDiv);
         document.body.appendChild(div);
+        setOptionsButton();
         names.forEach(addScripts)
+
     }
 });
 
@@ -42,3 +50,14 @@ function addScripts(item){
 
 let button = document.getElementById("btnScript");
 
+
+function setOptionsButton(){
+    var optionsButton = document.getElementById("optionsButton");
+    optionsButton.onclick = function(){
+        if(chrome.runtime.openOptionsPage){
+            chrome.runtime.openOptionsPage();
+        }else{
+            window.open(chrome.runtime.getURL('options.html'));
+        }
+    };
+}
