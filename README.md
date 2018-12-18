@@ -1,4 +1,4 @@
-# ScriptManager
+# Script Manager
 
 This Google Chrome extension allows you to save and manage Javascript scripts that can then be ran directly on webpages.
 
