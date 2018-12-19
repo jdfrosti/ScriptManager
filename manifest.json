@@ -5,7 +5,7 @@
     "permissions": ["activeTab","declarativeContent", "storage"],
     "options_page": "options.html",
     "background": {
-      "scripts": ["background.js"],
+      "scripts": ["js/background.min.js"],
       "persistent": false
     },
     "page_action":{
